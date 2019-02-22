@@ -19,14 +19,19 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
 
-      <div class="container-fluid d-flex justify-content-between">
-            @include('partials.asideLF')
-
-            @yield('content')
-            
-            @include('partials.asideRG')
+      <div class="container-fluid">
+      <div class="row justify-content-between">
+            <div class="col-lg-2 col-sm-12 border border-danger px-3 m-3 align-content-around">
+                @include('partials.asideLF')
+            </div>
+                <div class="col-lg-7 col-sm-12 text-center my-5 border border border-primary">
+                    @yield('content')
+                </div>
+            <div class="col-lg-2 col-sm-12 border border-danger p-5 m-3">
+                @include('partials.asideRG')
+            </div>
       </div>
-
+      </div>
     </main>
 
     @include('partials.footer')
