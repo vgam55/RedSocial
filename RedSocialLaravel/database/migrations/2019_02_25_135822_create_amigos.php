@@ -14,9 +14,11 @@ class CreateAmigos extends Migration
     public function up()
     {
         Schema::create('amigos', function (Blueprint $table) {
-            $table->increments('id_usuario_amigo');
+            $table->increments('id_Usuario_Amigo');
             $table->integer('id_usuario_remitente')->unsigned();
             $table->integer('id_usuario_destinatario')->unsigned();
+            $table->foreign('id_usuario_remitente')->references('id_Usuario')->on('users');
+            $table->foreign('id_usuario_destinatario')->references('id_Usuario')->on('users');
             $table->date('fecha');
             $table->boolean('estado');
             $table->timestamps();
