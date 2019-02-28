@@ -18,6 +18,7 @@ class chatsSeeder extends Seeder
         $chat->remitente=1;
         $chat->destinatario=2;
         $chat->mensaje="Hola";
+        $chat->fecha="2019-01-01";
         $chat->leido=false;
         $chat->save();
 
@@ -25,6 +26,7 @@ class chatsSeeder extends Seeder
         $chat->remitente=2;
         $chat->destinatario=4;
         $chat->mensaje="Hola";
+        $chat->fecha="2019-01-01";
         $chat->leido=false;
         $chat->save();
 
@@ -32,6 +34,7 @@ class chatsSeeder extends Seeder
         $chat->remitente=1;
         $chat->destinatario=3;
         $chat->mensaje="Hola";
+        $chat->fecha="2019-01-01";
         $chat->leido=false;
         $chat->save();
 
@@ -39,6 +42,7 @@ class chatsSeeder extends Seeder
         $chat->remitente=4;
         $chat->destinatario=1;
         $chat->mensaje="Hola";
+        $chat->fecha="2019-01-01";
         $chat->leido=false;
         $chat->save();
     }
