@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/userStyle.css') }}"
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{ asset('css/bootstrap/js/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('css/bootstrap/js/popper.js') }}"></script>
