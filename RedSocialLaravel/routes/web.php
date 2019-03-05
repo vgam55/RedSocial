@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::group(['middleware'=>'auth'],function(){
+	Route::get('/getAmigos','AmigosController@getAmigos');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
