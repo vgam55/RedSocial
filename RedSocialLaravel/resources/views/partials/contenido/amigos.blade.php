@@ -4,3 +4,5 @@
   <h4 class="text-start">{{$amigo->name}}</h4>
 </div>
 @endforeach
+
+{{--<script src="{{ asset('js/amigos.js') }}"></script>--}}

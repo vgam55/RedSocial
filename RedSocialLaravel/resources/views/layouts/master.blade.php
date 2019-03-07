@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/userStyle.css') }}"
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{ asset('css/bootstrap/js/jquery-3.3.1.js') }}"></script>
-    <script src="{{ asset('css/bootstrap/js/popper.js') }}"></script>
+  
     <script src="{{ asset('css/bootstrap/js/bootstrap.min.js') }}"></script>
     <title>Meloncia</title>
 </head>
