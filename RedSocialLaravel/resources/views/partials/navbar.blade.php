@@ -27,7 +27,10 @@
             <a class="nav-link" href="#">Mensajes <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">amigos</a>
+            <a class="nav-link" href="#">Amigos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('logout')}}">Salir</a>
         </li>
         </ul>
     </div>
