@@ -18,7 +18,7 @@ class CreateNotificacionesTable extends Migration
             $table->boolean('leido');
             $table->date('fecha');
             $table->integer('id_Pub')->unsigned();
-            $table->foreign('id_Pub')->references('id_Publicaciones')->on('publicaciones');
+            $table->foreign('id_Pub')->references('id_Publicaciones')->on('publicaciones')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -16,13 +16,13 @@ class CreatePublicacionesTable extends Migration
         Schema::create('publicaciones', function (Blueprint $table) {
             $table->increments('id_Publicaciones');
             $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('id_Usuario')->on('users');
+            $table->foreign('id_usuario')->references('id_Usuario')->on('users')->onDelete('cascade');
             $table->date('fecha');
             $table->text('contenido');
             $table->integer('id_foto')->unsigned();
-            $table->foreign('id_foto')->references('id_Fotos')->on('fotos');
+            $table->foreign('id_foto')->references('id_Fotos')->on('fotos')->onDelete('cascade');
             $table->integer('id_album')->unsigned();
-            $table->foreign('id_album')->references('id_Albumes')->on('albumes');
+            $table->foreign('id_album')->references('id_Albumes')->on('albumes')->onDelete('cascade');
             $table->timestamps();
         });
     }
