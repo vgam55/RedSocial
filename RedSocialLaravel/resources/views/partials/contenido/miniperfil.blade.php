@@ -16,5 +16,4 @@
 		  <a href="#" class="btn btn-primary">Borrar Cuenta</a> 
 	</div>
    </div>
-	
 </div>
