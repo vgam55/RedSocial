@@ -13,7 +13,10 @@
 		      
 		    </div>
 		  </div>
-		  <a href="#" class="btn btn-primary">Borrar Cuenta</a> 
+		  <form action="{{ url('/deleteUser/'.Auth::user()->id_Usuario) }}" method="POST">
+		  	  {{ method_field('delete') }}
+		  	  <button type="submit" class="btn btn-primary col-12">Borrar</button>
+		  </form>
 	</div>
    </div>
 	
