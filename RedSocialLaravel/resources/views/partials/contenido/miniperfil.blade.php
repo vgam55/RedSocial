@@ -14,6 +14,7 @@
 		    </div>
 		  </div>
 		  <form action="{{ url('/deleteUser/'.Auth::user()->id_Usuario) }}" method="POST">
+		  	  {{ csrf_field() }}
 		  	  {{ method_field('delete') }}
 		  	  <button type="submit" class="btn btn-primary col-12">Borrar</button>
 		  </form>
