@@ -6,6 +6,7 @@
 		    <div class="col-md-4">
 		      <img src="img\{{Auth::user()->avatar}}" class="card-img" alt="{{Auth::user()->avatar}}">
 		    </div>
+		    {{Auth::user()->avatar}}
 		    <div class="col-md-8">
 		      <div class="card-body">
 		        <p class="card-text"><small>{{Auth::user()->name}}</small></p>

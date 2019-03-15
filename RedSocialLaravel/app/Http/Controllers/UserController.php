@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\File;
+use Illuminate\Http\UploadFile;
+
 class UserController extends Controller
 {
     public function getUserByName(Request $request, $idUsuario)
@@ -29,6 +32,17 @@ class UserController extends Controller
         $usuario->password=bcrypt($request->input('userPwd'));
         $usuario->fecha_Nac=$request->input('birthDate');
         $usuario->avatar=Auth::user()->avatar;
+        Auth::user()->name=$usuario->name;
+        Auth::user()->email=$usuario->email;
+        Auth::user()->password=$usuario->password;
+        Auth::user()->fecha_Nac=$usuario->fecha_Nac;
+      //  if ($request->file('avatar')->isValid()) {
+            $archivo=$request->file('avatar');
+            $usuario->avatar=$archivo->getClientOriginalName();
+           // $usuario->avatar = $request->file('avatar')->getClientOriginalName();
+            $destino=base_path() . '/public/img/';
+            $archivo->move($destino,$usuario->avatar);
+        //}
        /*    $usuario->avatar = $request->file('image')->getClientOriginalName();
            $name = $request->file('image')->getClientOriginalName();       
            Storage::disk('public')->putFileAs('foto', new File($request->file('image')),$name,'public');*/

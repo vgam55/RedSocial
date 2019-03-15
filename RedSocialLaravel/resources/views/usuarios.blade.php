@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <form action="{{url('/updateUser/'.Auth::user()->id_Usuario)}}" method="POST">
+    <form id="usuarios" enctype="multipart/form-data" action="{{url('/updateUser/'.Auth::user()->id_Usuario)}}"  method="POST">
      {{ csrf_field() }}
-      {{ method_field('PUT') }}
+     {{ method_field('PUT') }}
       
       <div class="form-row">
         <div class="form-group col-12 col-sm-6 col-md-6 col-xl-4" >
