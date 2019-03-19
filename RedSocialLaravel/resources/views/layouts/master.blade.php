@@ -11,7 +11,8 @@
     <script src="{{ asset('css/bootstrap/js/jquery-3.3.1.js') }}"></script>
   
     <script src="{{ asset('css/bootstrap/js/bootstrap.min.js') }}"></script>
-    <title>Meloncia</title>
+    <link href="{{ asset('img/melonaIco.ico') }}" rel='shortcut icon' type='image/x-icon'>
+    <title>Melona</title>
 </head>
 <body class="d-flex flex-column h-100">
 

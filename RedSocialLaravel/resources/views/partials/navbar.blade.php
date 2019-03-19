@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
-    <a class="navbar-brand flex-grow-1" href="#">SocialTX</a>
+    <a class="navbar-brand flex-grow-1" href=" {{ url('inicio') }}">SocialTX</a>
     <!-- Barra de busqueda -->
     <form class="form-inline my-2 my-lg-0" action="{{ url('/findAmigos') }}" method="GET">
         <input class="form-control mr-sm-2" type="input" id="buscar" name="buscar" placeholder="Buscar" aria-label="Search">
@@ -17,7 +17,7 @@
               Alertas
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Solcitud de Amistad</a>
+            <a class="dropdown-item" href="{{ url('/notificaciones') }}">Solcitud de Amistad</a>
             <a class="dropdown-item" href="#">Eventos</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Chats</a>
