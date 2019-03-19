@@ -6,6 +6,7 @@
 		    <div class="col-md-4">
 		      <img src="img\{{Auth::user()->avatar}}" class="card-img" alt="{{Auth::user()->avatar}}">
 		    </div>
+		    {{Auth::user()->avatar}}
 		    <div class="col-md-8">
 		      <div class="card-body">
 		        <p class="card-text"><small>{{Auth::user()->name}}</small></p>
@@ -13,6 +14,7 @@
 		    </div>
 		  </div>
 		  <form action="{{ url('/deleteUser/'.Auth::user()->id_Usuario) }}" method="POST">
+		  	  {{ csrf_field() }}
 		  	  {{ method_field('delete') }}
 		  	  <button type="submit" class="btn btn-primary col-12">Borrar</button>
 		  </form>
