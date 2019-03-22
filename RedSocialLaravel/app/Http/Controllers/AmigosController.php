@@ -14,6 +14,7 @@ class AmigosController extends Controller
         $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
                 ->where('estado','=',1)->get();
+       // return response()->json($amigos);
     	return view('usuarios',['amigos'=>$amigos]);
         //Esta parte seria para usar con JQuery y Ajax
     	/*if($request->ajax()){
