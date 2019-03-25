@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex nav_bar">
     <a class="navbar-brand flex-grow-1" href=" {{ url('inicio') }}">SocialTX</a>
     <!-- Barra de busqueda -->
     <form class="form-inline my-2 my-lg-0" action="{{ url('/findAmigos') }}" method="GET">
