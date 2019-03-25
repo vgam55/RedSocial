@@ -17,12 +17,12 @@
     <link href="{{ asset('img/melonaIco.ico') }}" rel='shortcut icon' type='image/x-icon'>
     <title>Melona</title>
 </head>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" >
 
     @include('partials.header')
     @include('partials.navbar')
     <!-- Begin page content -->
-    <main role="main" class="flex-shrink-0">
+    <main role="main" id="main" class="flex-shrink-0">
 
       <div class="container">
       <div class="row justify-content-between">

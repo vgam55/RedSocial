@@ -1,7 +1,7 @@
 @foreach($amigos as $amigo)
 <div>
   <img src="img/{{$amigo->avatar}}" alt="{{$amigo->avatar}}" class="img-fluid">
-  <h4 class="text-start">{{$amigo->name}}</h4>
+  <a href="{{url('/getPublicaciones/'.$amigo->id_usuario_destinatario)}}">{{$amigo->name}}</a>
 </div>
 @endforeach
 

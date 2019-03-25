@@ -3,7 +3,7 @@ $(function(){
 			   
 				$.ajax({
 					type:'GET',
-					url:'/amigos',
+					url:'/getAmigos',
 					
 					//dataType. Tipo de datos que esperas. ("json","text"). Usando "json" no hace falta hacer JSON.parse
 					
