@@ -4,8 +4,14 @@
 	<div class="card" style="max-width: 150px;">
 		  <div class="row no-gutters border-dark bg-success text-white">
 		    <div class="col-md-4">
+<<<<<<< HEAD
 		      <img src="{{asset('img/'.Auth::user()->avatar)}}" class="card-img" alt="{{Auth::user()->avatar}}">
 		    </div>
+=======
+		      <img src="{{ asset('img/'.Auth::user()->avatar)}}" class="card-img" alt="Auth::user()->avatar">
+		    </div>
+		   
+>>>>>>> e33c769749b0615de02747ba6ca78c5e9b2a96e2
 		    <div class="col-md-8">
 		      <div class="card-body">
 		        <p class="card-text"><small>{{Auth::user()->name}}</small></p>
