@@ -26,13 +26,13 @@
 
       <div class="container">
       <div class="row justify-content-between">
-            <div class="col-lg-2 col-sm-12 my-5 border border-danger align-content-around">
+            <div class="col-lg-2 col-sm-12 my-5 align-content-around">
                 @include('partials.asideLF')
             </div>
-                <div class="col-lg-7 col-sm-12 text-center my-5 border border border-primary">
+                <div class="col-lg-7 col-sm-12 text-center my-5">
                     @yield('content')
                 </div>
-            <div class="col-lg-2 col-sm-12 my-5 border border-danger ">
+            <div class="col-lg-2 col-sm-12 my-5">
                 @include('partials.asideRG')
             </div>
       </div>

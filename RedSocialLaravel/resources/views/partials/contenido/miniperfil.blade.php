@@ -4,7 +4,7 @@
 	<div class="card" style="max-width: 150px;">
 		  <div class="row no-gutters border-dark bg-success text-white">
 		    <div class="col-md-4">
-		      <img src="img\{{Auth::user()->avatar}}" class="card-img" alt="{{Auth::user()->avatar}}">
+		      <img src="{{asset('img/'.Auth::user()->avatar)}}" class="card-img" alt="{{Auth::user()->avatar}}">
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
