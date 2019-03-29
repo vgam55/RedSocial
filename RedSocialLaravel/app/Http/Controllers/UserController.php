@@ -11,7 +11,7 @@ use Illuminate\Http\UploadFile;
 
 class UserController extends Controller
 {
-    public function getUserByName(Request $request, $idUsuario)
+    public function getUserByName(Request $request)
     {
         $nombre=$request->input('buscar');
         $usuarios=User::where('name','like','%'.$nombre.'%')->get();

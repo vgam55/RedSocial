@@ -32,6 +32,7 @@
 
       </div>
        
-       <button type="submit" class="btn btn-primary">Sign in</button>
+       <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
+    <script src="js/validarUpdate.js"></script>
 @endsection
