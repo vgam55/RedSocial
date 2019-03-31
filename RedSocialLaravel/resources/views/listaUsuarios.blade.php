@@ -9,7 +9,7 @@
 	    <div class="col-md-8">
 	      <div class="card-body">
 	        <h5 class="card-title">{{$usuario->name}}</h5>
-	           <a href="#" class="btn btn-primary stretched-link">Solicitud de amistad</a>
+	           <a href="{{url('/getAmistad/'.$usuario->id_Usuario)}}" class="btn btn-primary stretched-link">Solicitud de amistad</a>
 	      </div>
 	    </div>
 	  </div>
