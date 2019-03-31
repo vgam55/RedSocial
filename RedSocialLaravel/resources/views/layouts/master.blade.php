@@ -27,13 +27,17 @@
       <div class="container">
       <div class="row justify-content-between">
             <div class="col-lg-2 col-sm-12 my-5 align-content-around">
+        @if (Auth::check())
                 @include('partials.asideLF')
+        @endif
             </div>
-                <div class="col-lg-7 col-sm-12 text-center my-5">
-                    @yield('content')
-                </div>
+            <div class="col-lg-7 col-sm-12 text-center my-5">
+                @yield('content')
+            </div>
             <div class="col-lg-2 col-sm-12 my-5">
+        @if (Auth::check())
                 @include('partials.asideRG')
+        @endif
             </div>
       </div>
       </div>

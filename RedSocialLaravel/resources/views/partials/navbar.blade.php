@@ -12,26 +12,32 @@
     <!-- Opciones del menu principal -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Alertas
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url('/notificaciones') }}">Solcitud de Amistad</a>
-            <a class="dropdown-item" href="#">Eventos</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Chats</a>
-            </div>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Mensajes <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Amigos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('logout')}}">Salir</a>
-        </li>
+        @if (Auth::check())
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Alertas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url('/notificaciones') }}">Solcitud de Amistad</a>
+                <a class="dropdown-item" href="#">Eventos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Chats</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Mensajes <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Amigos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('logout')}}">Salir</a>
+            </li>
+        @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/registro')}}">Registrar</a>
+            </li>
+        @endif
         </ul>
     </div>
 </nav>

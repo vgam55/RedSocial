@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('content')
-    <div class="col-lg-5 text-center my-5 border border border-primary">
-        
-    </div>
+@if ($publicaciones->count() > 0)
+        @foreach ($publicaciones as $publicacion)
+            {{ $publicacion->contenido }}<br>
+        @endforeach
+    @else
+        No hay publicaciones nuevas
+    @endif
 @endsection

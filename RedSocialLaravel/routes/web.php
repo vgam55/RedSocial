@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/registro', function () {
+    return view('auth.register');
+});
 
 Route::group(['middleware'=>'auth'],function(){
 	Route::get('/home', 'HomeController@index')->name('home');
