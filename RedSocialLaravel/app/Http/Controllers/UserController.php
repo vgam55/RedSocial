@@ -37,11 +37,19 @@ class UserController extends Controller
         Auth::user()->password=$usuario->password;
         Auth::user()->fecha_Nac=$usuario->fecha_Nac;
       //  if ($request->file('avatar')->isValid()) {
-            $archivo=$request->file('avatar');
-            $usuario->avatar=$archivo->getClientOriginalName();
-           // $usuario->avatar = $request->file('avatar')->getClientOriginalName();
-            $destino=base_path() . '/public/img/';
+            
+            if($request->file('avatar')!=null)
+            {
+                $archivo=$request->file('avatar');
+                $usuario->avatar=$archivo->getClientOriginalName();
+                 $destino=base_path() . '/public/img/';
             $archivo->move($destino,$usuario->avatar);
+            }
+            else
+            {
+                $usuario->avatar=$request->input('avatarO');
+            }
+           
         //}
        /*    $usuario->avatar = $request->file('image')->getClientOriginalName();
            $name = $request->file('image')->getClientOriginalName();       

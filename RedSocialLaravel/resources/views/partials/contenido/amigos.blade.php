@@ -9,8 +9,6 @@
          <a href="{{url('/getPublicaciones/'.$amigo->id_usuario_destinatario)}}" class="btn btn-primary stretched-link col-5">{{$amigo->name}}</a>
         <button class="btn btn-danger stretched-link col-5" type="submit">Borrar</button>
   </form>
- {{-- <a href="{{url('/deleteUser/'.$amigo->id_Usuario)}}" class="btn btn-danger stretched-link col-5">Borrar</a>--}}
 </div>
 @endforeach
-
 {{--<script src="{{ asset('js/amigos.js') }}"></script>--}}
