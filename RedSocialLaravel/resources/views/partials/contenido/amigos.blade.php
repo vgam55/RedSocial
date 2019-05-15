@@ -1,4 +1,4 @@
-@foreach($amigos as $amigo)
+{{--@foreach($amigos as $amigo)
 <div>
  
   <img src="{{ asset('img/'.$amigo->avatar) }}" alt="{{$amigo->avatar}}" class="img-fluid">
@@ -10,5 +10,6 @@
         <button class="btn btn-danger stretched-link col-5" type="submit">Borrar</button>
   </form>
 </div>
-@endforeach
-{{--<script src="{{ asset('js/amigos.js') }}"></script>--}}
+@endforeach--}}
+
+<script src="{{ asset('js/amigos.js')}}"></script>

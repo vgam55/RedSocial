@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/userStyle.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
-
+    
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ asset('css/bootstrap/js/jquery-3.3.1.js') }}"></script>
+   <!-- <script src="{{ asset('css/bootstrap/js/jquery-3.3.1.js') }}"></script>-->
   
     <script src="{{ asset('css/bootstrap/js/bootstrap.min.js') }}"></script>
 
@@ -44,6 +45,7 @@
     </main>
 
     @include('partials.footer')
-    @yield('js')
+    
+
 </body>
 </html>

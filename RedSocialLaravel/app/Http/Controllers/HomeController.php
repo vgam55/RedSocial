@@ -30,16 +30,13 @@ class HomeController extends Controller
      */
     public function index()
     {       
-       return redirect()->action('AmigosController@getAmigos');
+       return redirect()->action('HomeController@inicio');
     }
 
     public function inicio()
     {
         $publicaciones = Publicacion::all();
-        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
-                ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
-
-        return view('inicio',['publicaciones'=>$publicaciones, 'amigos'=>$amigos]);
+        
+        return view('inicio',['publicaciones'=>$publicaciones]);
     }
 }
