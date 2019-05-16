@@ -20,12 +20,7 @@ class PublicacionesCotroller extends Controller
       	$publicaciones=DB::table('publicaciones')
        				   ->join('fotos','publicaciones.id_foto','=','fotos.id_Fotos')
        				   ->where('publicaciones.id_usuario','=',1)->get();
-
-       	$amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
-                ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
        
-       return view('publicaciones',['publicaciones'=>$publicaciones,
-       								 'amigos'=>$amigos]);
+       return view('publicaciones',['publicaciones'=>$publicaciones]);
     }
 }

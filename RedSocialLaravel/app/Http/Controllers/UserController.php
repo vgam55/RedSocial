@@ -16,11 +16,8 @@ class UserController extends Controller
         $nombre=$request->input('buscar');
         $usuarios=User::where('name','like','%'.$nombre.'%')->get();
         //Esto es provisional hasta que pueda integrar bien Ajax
-        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
-                ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
-        return view('listaUsuarios',['amigos'=>$amigos,
-                                     'listaUsuarios'=>$usuarios]);
+        
+        return view('listaUsuarios',['listaUsuarios'=>$usuarios]);
     }
 
     public function updateUser(Request $request)
@@ -57,11 +54,9 @@ class UserController extends Controller
         
         $usuario->save();
          //Esto es provisional hasta que pueda integrar bien Ajax
-        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
-                ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
+       
         
-       return view ('usuarios',['amigos'=>$amigos]);
+       return view ('inicio');
     }
 
     public function deleteUser($idUsuario)

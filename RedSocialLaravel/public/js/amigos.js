@@ -47,6 +47,7 @@ $(function(){
 							divAmigo=divAmigo+"</div>";
 						}
 						friends.append(divAmigo);
+						
 						//document.append(friends);		
 					},
            error:function(jqXHR,estado, error){

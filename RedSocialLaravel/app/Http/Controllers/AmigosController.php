@@ -12,24 +12,13 @@ class AmigosController extends Controller
     public function getAmigos(Request $request)
     {
         $salida="<div>";
-        if(!$request->ajax())
+        if($request->ajax())
         {
           $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
                 ->where('estado','=',1)->get();
         }
-        
-        /*foreach($amigos as $amigo)
-        {
-          $salida=$salida."<img class='img-fluid' src='img\\".$amigo->avatar."'/>"."<br>";
-          $salida=$salida."<form class=\"form-inline\">";
-          $salida=$salida."<a href=\"/getPublicaciones/$amigo->id_usuario_destinatario'\" class=\"btn btn-primary stretched-link col-6\">$amigo->name</a>";
-          $salida=$salida."<button class=\"button btn btn-danger stretched-link col-6\">Borrar</button>";
-          $salida=$salida."</form>";
-          $salida=$salida."</div>";
-        }
-           
-        $amigos=json_encode($amigos);*/
+       
         echo json_encode($amigos);
     	//return view('usuarios',['amigos'=>$amigos]);  	
        //echo $salida;
@@ -58,7 +47,7 @@ class AmigosController extends Controller
         $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
                 ->where('estado','=',1)->get();
-       // return response()->json($amigos);
-      return view('usuarios',['amigos'=>$amigos]);
+        return response()->json($amigos);
+      //return view('usuarios',['amigos'=>$amigos]);
     }
 }
