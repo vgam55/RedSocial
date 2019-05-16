@@ -53,9 +53,6 @@ class UserController extends Controller
            Storage::disk('public')->putFileAs('foto', new File($request->file('image')),$name,'public');*/
         
         $usuario->save();
-         //Esto es provisional hasta que pueda integrar bien Ajax
-       
-        
        return view ('inicio');
     }
 
