@@ -22,6 +22,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	Route::get('/inicio', 'HomeController@inicio')->name('inicio');
+	Route::get('/mensajes', 'MensajesController@index')->name('mensajes');
 	Route::get('/notificaciones', 'NotificacionesController@index')->name('notificaciones');
 
 	//Rutas para la gestion de "Amigos"

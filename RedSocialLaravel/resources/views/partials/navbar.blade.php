@@ -27,7 +27,7 @@
                 </div>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Mensajes <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('mensajes') }}">Mensajes <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Amigos</a>
