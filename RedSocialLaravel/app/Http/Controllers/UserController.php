@@ -11,6 +11,11 @@ use Illuminate\Http\UploadFile;
 
 class UserController extends Controller
 {
+    public function getUser()
+    {
+        //Lleva al formulario donde metemos los datos para actualizar el perfil del usuario.
+        return view('usuarios');
+    }
     public function getUserByName(Request $request)
     {
         $nombre=$request->input('buscar');
@@ -53,7 +58,7 @@ class UserController extends Controller
            Storage::disk('public')->putFileAs('foto', new File($request->file('image')),$name,'public');*/
         
         $usuario->save();
-       return view ('inicio');
+       return redirect()->route('inicio');
     }
 
     public function deleteUser($idUsuario)
