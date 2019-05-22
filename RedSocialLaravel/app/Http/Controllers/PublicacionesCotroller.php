@@ -21,12 +21,6 @@ class PublicacionesController extends Controller
         return view('publicaciones');
     }
 
-    public function read()
-    {
-        $Publicaciones=Publicacion::all();
-        // carga la vista y pasa los publicacioes
-        return view('publicaciones.create',['publicaciones'=>$Publicaciones]);
-    }
 
     public function create(Request $request)
     {

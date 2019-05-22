@@ -9,14 +9,12 @@
 	  <form class="form-inline" action="{{ url('/deleteAmigos/'.$amigo['id_Usuario']) }}" method="POST">
 	        {{ csrf_field() }}
 	        {{ method_field('DELETE') }}
-	         <a href="{{url('/getPublicaciones/'.$amigo['id_usuario_destinatario'])}}" class="btn btn-primary stretched-link col-5">{{$amigo->name}}</a>
+	        <a href="{{url('/getPublicaciones/'.$amigo['id_usuario_destinatario'])}}" class="btn btn-primary stretched-link col-5">{{$amigo->name}}</a>
 	        <button class="btn btn-danger stretched-link col-5" type="submit">Borrar</button>
 	  </form>
 	</div>
 	@endforeach
 @else
-	<div>
-		<p>hola pajarito sin cola</p>
-	</div>
+
 @endif--}}
 

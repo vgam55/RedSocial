@@ -16,11 +16,11 @@
     <script src="{{ asset('css/bootstrap/js/bootstrap.min.js') }}"></script>
 
     <link href="{{ asset('img/melonaIco.ico') }}" rel='shortcut icon' type='image/x-icon'>
-    <title>Melona</title>
+    <title>SocialTX</title>
 </head>
 <body class="d-flex flex-column h-100" >
 
-    @include('partials.header')
+
     @include('partials.navbar')
     <!-- Begin page content -->
     <main role="main" id="main" class="flex-shrink-0">
@@ -32,7 +32,7 @@
                 @include('partials.asideLF')
         @endif
             </div>
-            <div class="col-lg-7 col-sm-12 text-center my-5">
+            <div class="col-lg-8 col-sm-12 text-center my-5">
                 @yield('content')
             </div>
             <div class="col-lg-2 col-sm-12 my-5">
@@ -44,7 +44,7 @@
       </div>
     </main>
 
-    @include('partials.footer')
+  
     
 
 </body>
