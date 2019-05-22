@@ -1,12 +1,19 @@
 @extends('layouts.master')
 @section('content')
-   @foreach($publicaciones as $publicacion)
 
-     <div class="card col-12">
-        <img src="{{asset('/img/'.$publicacion->ruta_foto)}}" class="card-img-top col-12" alt="...">
-        <div class="card-body col-12">
-          <p class="card-text">{{$publicacion->contenido}}</p>
+<form  action="{{url('/create')}}" method="POST" >
+
+    {{ csrf_field() }}
+    {{ method_field('POST') }}
+
+    <div class="mt-5">
+        <label class="font-weight-bold" for="nombre">Publicacion:</label><br>
+        <textarea name="contenido" id="contenido" cols="90" rows="10"></textarea>
+    </div>
+        <div>
+         <button type="submit" class="btn btn-success float-right">Publicar</button>
         </div>
-      </div>
-   @endforeach
+
+    </form>
+
 @endsection
