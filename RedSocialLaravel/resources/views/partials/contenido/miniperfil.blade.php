@@ -1,8 +1,8 @@
 <div>
   {{--  <img src="{{ asset('img/perfil.jpg') }}" title="" style="height: 50px" class="rounded-circle"> --}}
-  <div class="card border-primary" style="max-width: 150px; min-width:100px;">	
-	<div class="card" style="max-width: 150px;">
-		  <div class="row no-gutters border-dark bg-success text-white">
+	<div class="card " style="max-width: 250px; min-width:100px;position:absolute;left:-3em;">
+	
+		  <div class="row no-gutters border-dark  text-black">
 		    <div class="col-md-4">
 		      <img src="{{asset('img/'.Auth::user()->avatar)}}" class="card-img" alt="{{Auth::user()->avatar}}">
 		    </div>
@@ -15,9 +15,9 @@
 		  <form action="{{ url('/deleteUser/'.Auth::user()->id_Usuario) }}" method="POST">
 		  	  {{ csrf_field() }}
 		  	  {{ method_field('delete') }}
-		  	  <a href=" {{ url('/usuario') }} " class="btn btn-primary col-sm-5">Editar</a>
-		  	  <button type="submit" class="btn btn-danger col-sm-5">Borrar</button>
+		  	  <a href=" {{ url('/usuario') }} " class="btn btn-primary col-sm-4">Editar</a>
+		  	  <button type="submit" class="btn btn-danger col-sm-4">Borrar</button>
 		  </form>
-	</div>
+
    </div>
 </div>

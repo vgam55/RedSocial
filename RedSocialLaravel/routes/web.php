@@ -39,7 +39,17 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::delete('/deleteUser/{idUsuario}','UserController@deleteUser'); /*Ruta que lleva al metodo donde se borra el perfil del usuario*/
 
 	//Rutas para gestionar publicaciones
-	Route::get('/getPublicaciones/{idUser}','PublicacionesCotroller@getPublicaciones');
+	Route::get('/publicaciones','PublicacionesController@index');
+	Route::get('/publicaciones/read','PublicacionesController@read');
+    Route::post('/create','PublicacionesController@create');
+    Route::delete('/delete/{idPublicacion}','PublicacionesController@delete');
+
+	//Rutas para gestionar mensajes
+	//Route::get('/mensajes','MensajesController@index');
+	Route::get('/mensajes','MensajesController@read')->name('mensajes');
+	Route::post('/create','MensajesController@create');
+	Route::delete('/deleteMensaje/{id_Mensaje}','MensajesController@delete');
+
 });
 
 Auth::routes();

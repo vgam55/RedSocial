@@ -35,8 +35,11 @@ class HomeController extends Controller
 
     public function inicio()
     {
-        $publicaciones = Publicacion::all();
-        
+        $publicaciones = Publicacion::select('users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
+            ->join('users', 'publicaciones.id_usuario', '=', 'users.id_Usuario')
+            ->get();
+
+
         return view('inicio',['publicaciones'=>$publicaciones]);
     }
 }
