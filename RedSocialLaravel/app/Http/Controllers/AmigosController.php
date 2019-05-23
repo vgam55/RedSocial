@@ -6,22 +6,25 @@ use Illuminate\Http\Request;
 use App\Amigo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Response;
 class AmigosController extends Controller
 {
     public function getAmigos(Request $request)
     {
-        $salida="<div>";
-        if($request->ajax())
-        {
-          $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
+       //$colegas=Amigo::all();
+       $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
+                ->where('estado','=',1)->get();*/
+        $vista=View::make('amigos')->with('listaAmigos',$amigos);
+        if(!$request->ajax()){
+            $sections = $vista->renderSections();
+            return Response::json($sections['adiskideak']); 
         }
-       
-        echo json_encode($amigos);
-    	//return view('usuarios',['amigos'=>$amigos]);  	
-       //echo $salida;
+        else 
+        {
+            return $vista;
+        }
     }
 
     public function deleteAmigos($idAmigo)
