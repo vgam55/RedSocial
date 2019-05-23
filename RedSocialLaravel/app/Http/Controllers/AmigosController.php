@@ -16,7 +16,7 @@ class AmigosController extends Controller
        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
                 ->where('estado','=',1)->get();*/
-        $vista=View::make('amigos')->with('listaAmigos',$amigos);
+       /* $vista=View::make('amigos')->with('listaAmigos',$amigos);
         if(!$request->ajax()){
             $sections = $vista->renderSections();
             return Response::json($sections['adiskideak']); 
@@ -24,7 +24,8 @@ class AmigosController extends Controller
         else 
         {
             return $vista;
-        }
+        }*/
+      return view('inicio',['listaAmigos',$amigos]);
     }
 
     public function deleteAmigos($idAmigo)
