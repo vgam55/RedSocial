@@ -47,7 +47,7 @@ Route::group(['middleware'=>'auth'],function(){
 	//Rutas para gestionar mensajes
 	//Route::get('/mensajes','MensajesController@index');
 	Route::get('/mensajes','MensajesController@read')->name('mensajes');
-	Route::post('/create','MensajesController@create');
+	Route::post('/mensaje/create','MensajesController@create');
 	Route::delete('/deleteMensaje/{id_Mensaje}','MensajesController@delete');
 
 });

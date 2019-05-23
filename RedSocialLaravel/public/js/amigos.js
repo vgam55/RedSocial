@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-$(function(){	
-    $.ajax({
-           type: "GET",
-           url:'./getAmigos',
-           dataType:'json',
-           success: function (datos) {
-           		alert("Hola pajarito sin cola");
-                $('#friends').empty().append($(datos)); 
-            },
-           error:function(jqXHR,estado, error, data){
-           	alert('El error es '+error);
-           }
-         }); 
-=======
 $.ajaxSetup({
 	headers: {"X-Requested-With":"XMLHttpRequest"}
 });
@@ -61,5 +46,4 @@ $.ajax({
 	 });
 /* return false;*/
 
->>>>>>> 23a47e02b650e44d8123c46445eb062a8c291dc2
 });

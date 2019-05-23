@@ -35,7 +35,7 @@
             <div class="col-lg-8 col-sm-12 text-center my-5">
                 @yield('content')
             </div>
-            <div id="asideRG" class="col-lg-2 col-sm-12 my-5">
+            <div class="col-lg-2 col-sm-12 my-5">
         @if (Auth::check())
                 @include('partials.asideRG')
         @endif
