@@ -19,7 +19,7 @@ class UserController extends Controller
     public function getUserByName(Request $request)
     {
         $nombre=$request->input('buscar');
-        $usuarios=User::where('name','like','%'.$nombre.'%')->get();
+        $usuarios=User::where('name','like','%'.$nombre.'%')->whereNotIn('id_Usuario', [Auth::user()->id_Usuario])->get();
         //Esto es provisional hasta que pueda integrar bien Ajax
         
         return view('listaUsuarios',['listaUsuarios'=>$usuarios]);

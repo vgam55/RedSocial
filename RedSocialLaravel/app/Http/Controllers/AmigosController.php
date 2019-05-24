@@ -50,4 +50,21 @@ class AmigosController extends Controller
         return response()->json($amigos);
       //return view('usuarios',['amigos'=>$amigos]);
     }
+
+
+    public function aceptarAmistad($idUsuario)
+    {
+
+        //update estado
+        $amigos=DB::table('amigos')
+            ->where('id_usuario_destinatario', Auth::user()->id_Usuario)
+            ->where('id_usuario_remitente', $idUsuario)
+            ->update(['estado' => 1]);
+
+        return response()->json($amigos);
+
+
+       
+    }
+
 }
