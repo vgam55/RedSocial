@@ -34,7 +34,7 @@ Route::group(['middleware'=>'auth'],function(){
 	//Rutas para la gestión de usuarios
 	Route::get('/getUser/{name}','UserController@getUserByName'); /* Ruta para que un usuario pueda buscar a otros por el nombre
 									  y pueda enviar una solicitud de amistad.*/
-	Route::get('/usuario','UserController@getUser'); /*Lleva al formulario que coge los datos para  actualizar un usuario*/								  
+	Route::get('/usuario','UserController@getUser'); /*Lleva al formulario que coge los datos para  actualizar un usuario*/
 	Route::put('/updateUser/{idUsuario}','UserController@updateUser'); /*Ruta que lleva al metodo que actualiza los datos del usuario*/
 	Route::delete('/deleteUser/{idUsuario}','UserController@deleteUser'); /*Ruta que lleva al metodo donde se borra el perfil del usuario*/
 
@@ -47,7 +47,7 @@ Route::group(['middleware'=>'auth'],function(){
 	//Rutas para gestionar mensajes
 	//Route::get('/mensajes','MensajesController@index');
 	Route::get('/mensajes','MensajesController@read')->name('mensajes');
-	Route::post('/mensaje/create','MensajesController@create');
+    Route::post('/mensaje/create','MensajesController@create');
 	Route::delete('/deleteMensaje/{id_Mensaje}','MensajesController@delete');
 
 });
