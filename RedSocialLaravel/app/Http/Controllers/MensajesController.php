@@ -21,13 +21,17 @@ class MensajesController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {       
+    {
         return view('mensajes');
     }
 
     public function read()
     {
-        $mensajes = Mensaje::select('id_Mensaje','id_Remitente', 'id_Destinatario', 'mensaje', 'fecha')->where('id_Destinatario', Auth::user()->id_Usuario)->get();
+        $mensajes = Mensaje::select('users.name', 'mensajes.id_Mensaje', 'mensajes.id_Remitente', 'mensajes.id_Destinatario', 'mensajes.mensaje', 'mensajes.fecha')
+        ->join('users', 'id_Remitente','=', 'users.id_Usuario')
+        ->where('id_Destinatario', Auth::user()->id_Usuario)
+        ->get();
+       // $mensajes = Mensaje::select('id_Mensaje','id_Remitente', 'id_Destinatario', 'mensaje', 'fecha')->where('id_Destinatario', Auth::user()->id_Usuario)->get();
         //$mensajes = Mensaje::all();
         // carga la vista y pasa los publicacioes
         $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
@@ -50,6 +54,8 @@ class MensajesController extends Controller
     	$mensajes->save();
         return redirect('mensajes');
     }
+
+
 
     //METODO DELETE
     public function delete($id_Mensaje)
