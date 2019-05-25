@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(chatsSeeder::class);
         $this->call(fotosSeeder::class);
         $this->call(publicacionesSeeder::class);
-        
+        $this->call(MensajeSeeder::class);
         $this->call(notificacionesSeeder::class);
         $this->call(comentariosSeeder::class);
         Model::reguard();

@@ -15,6 +15,7 @@ class amigosSeeder extends Seeder
         DB::table('amigos')->delete();
 
         $amigo=new Amigo();
+        $amigo->id_Usuario_Amigo=1;
         $amigo->id_Usuario_Remitente=1;
         $amigo->id_Usuario_Destinatario=2;
         $amigo->fecha="2019-01-01";
@@ -22,6 +23,7 @@ class amigosSeeder extends Seeder
         $amigo->save(); 
 
         $amigo=new Amigo();
+        $amigo->id_Usuario_Amigo=2;
         $amigo->id_Usuario_Remitente=1;
         $amigo->id_Usuario_Destinatario=3;
         $amigo->fecha="2019-01-01";
@@ -29,6 +31,7 @@ class amigosSeeder extends Seeder
         $amigo->save(); 
 
         $amigo=new Amigo();
+        $amigo->id_Usuario_Amigo=3;
         $amigo->id_Usuario_Remitente=1;
         $amigo->id_Usuario_Destinatario=4;
         $amigo->fecha="2019-01-01";
@@ -36,6 +39,7 @@ class amigosSeeder extends Seeder
         $amigo->save(); 
 
         $amigo=new Amigo();
+        $amigo->id_Usuario_Amigo=4;
         $amigo->id_Usuario_Remitente=2;
         $amigo->id_Usuario_Destinatario=3;
         $amigo->fecha="2019-01-01";
@@ -43,6 +47,7 @@ class amigosSeeder extends Seeder
         $amigo->save(); 
 
         $amigo=new Amigo();
+        $amigo->id_Usuario_Amigo=5;
         $amigo->id_Usuario_Remitente=2;
         $amigo->id_Usuario_Destinatario=4;
         $amigo->fecha="2019-01-01";

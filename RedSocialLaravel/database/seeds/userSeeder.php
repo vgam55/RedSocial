@@ -15,6 +15,7 @@ class userSeeder extends Seeder
           DB::table('users')->delete();
 
           $user= new User();
+          $user->id_Usuario=1;
           $user->name="Victor";
           $user->email="vgam@latinmail.com";
           $user->password=bcrypt("12345");
@@ -23,6 +24,7 @@ class userSeeder extends Seeder
           $user->save();
 
           $user= new User();
+          $user->id_Usuario=2;
           $user->name="Anne";
           $user->email="anne@latinmail.com";
           $user->password=bcrypt("12345");
@@ -31,6 +33,7 @@ class userSeeder extends Seeder
           $user->save();
 
           $user= new User();
+          $user->id_Usuario=3;
           $user->name="Jose";
           $user->email="ibermatica@latinmail.com";
           $user->password=bcrypt("12345");
@@ -39,6 +42,7 @@ class userSeeder extends Seeder
           $user->save();
 
           $user= new User();
+          $user->id_Usuario=4;
           $user->name="Samuel";
           $user->email="samuel@latinmail.com";
           $user->password=bcrypt("12345");

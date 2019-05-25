@@ -15,10 +15,12 @@ class fotosSeeder extends Seeder
         DB::table('fotos')->delete();
 
         $foto=new Foto;
+        $foto->id_Fotos=1;
         $foto->id_user=1;
         $foto->id_album=1;
         $foto->fecha_creacion="2019-01-01";
         $foto->ruta_foto="public/img/perfil.jpg";
         $foto->save();
+
     }
 }

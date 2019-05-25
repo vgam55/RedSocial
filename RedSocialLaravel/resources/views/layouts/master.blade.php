@@ -44,6 +44,12 @@
                     </div>
                     <script src="js/amigos.js"></script>
                 @endif
+
+            <div class="col-lg-2 col-sm-12 my-5">
+        @if (Auth::check())
+                @include('partials.asideRG')
+        @endif
+
             </div>
       </div>
       </div>
