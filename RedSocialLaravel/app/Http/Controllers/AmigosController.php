@@ -15,28 +15,24 @@ class AmigosController extends Controller
        //$colegas=Amigo::all();
        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();*/
-       /* $vista=View::make('amigos')->with('listaAmigos',$amigos);
-        if(!$request->ajax()){
+                ->where('estado','=',1)->get();
+        $vista=View::make('\partials\contenido\amigos1')->with('listaAmigos',$amigos);
+        if($request->ajax()){
             $sections = $vista->renderSections();
             return Response::json($sections['adiskideak']); 
         }
         else 
         {
             return $vista;
-        }*/
-      return view('inicio',['listaAmigos',$amigos]);
+        }
+      //return view('inicio',['listaAmigos',$amigos]);
     }
 
     public function deleteAmigos($idAmigo)
     {
        $amigo=Amigo::findOrFail($idAmigo);
        $amigo->delete();
-       $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
-                ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
-       return response()->json($amigos);
-        //return view('usuarios',['amigos'=>$amigos]);
+       return redirect()->action('HomeController@inicio');
     }
 
     public function getAmistad($idUsuario)
@@ -48,10 +44,6 @@ class AmigosController extends Controller
         $amigo->estado=0;
         $amigo->save();
 
-        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
-                ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
-                ->where('estado','=',1)->get();
-        return response()->json($amigos);
-      //return view('usuarios',['amigos'=>$amigos]);
+        return redirect()->action('HomeController@inicio');
     }
 }

@@ -36,9 +36,14 @@
                 @yield('content')
             </div>
             <div id="asideRG" class="col-lg-2 col-sm-12 my-5">
-        @if (Auth::check())
-                @include('partials.asideRG')
-        @endif
+                @if (Auth::check())
+                    <div class="row my-5 border border border-primary p-3" id="friends" name="friends">
+                       @section ('adiskideak')
+                        
+                       @show 
+                    </div>
+                    <script src="js/amigos.js"></script>
+                @endif
             </div>
       </div>
       </div>

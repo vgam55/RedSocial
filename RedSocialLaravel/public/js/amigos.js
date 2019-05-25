@@ -1,20 +1,17 @@
-<<<<<<< HEAD
-$(function(){	
+
+$(function(){
     $.ajax({
-           type: "GET",
+    	   type: "GET",
            url:'./getAmigos',
-           dataType:'json',
+           dataType:'JSON',
            success: function (datos) {
-           		alert("Hola pajarito sin cola");
                 $('#friends').empty().append($(datos)); 
             },
            error:function(jqXHR,estado, error, data){
            	alert('El error es '+error);
            }
          }); 
-=======
-$.ajaxSetup({
-	headers: {"X-Requested-With":"XMLHttpRequest"}
+
 });
 /*function mostrarAmigos()
 {
@@ -23,7 +20,7 @@ $('#amigos').load('./getAmigos')
 */
 
 
-$(function(){
+/*$(function(){
 
 // $.getJSON('./getAmigos',llegadaDatos);
 $.ajax({
@@ -47,7 +44,7 @@ $.ajax({
 			/*	href="{{ url('/deleteAmigo/"+amigos[i]['id_Usuario']+"') }}";
 				divAmigo=divAmigo+"<a href=\""+href+"\" class='btn btn-danger stretched-link col-6'>"+"Eliminar"+"</a>";
 				divAmigo=divAmigo+"<a href='/deleteAmigo/'"+amigos[i]['id_usuario']+"' class='btn btn-primary stretched-link col-6'>"+amigos[i]["name"]+"</a>";*/
-				divAmigo=divAmigo+"</div>";
+				/*divAmigo=divAmigo+"</div>";
 
 				console.log(href);
 			}
@@ -61,5 +58,5 @@ $.ajax({
 	 });
 /* return false;*/
 
->>>>>>> 23a47e02b650e44d8123c46445eb062a8c291dc2
-});
+/*>>>>>>> 23a47e02b650e44d8123c46445eb062a8c291dc2
+});*/
