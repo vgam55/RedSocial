@@ -57,6 +57,7 @@ class AmigosController extends Controller
             ->where('id_usuario_remitente', $idUsuario)
             ->update(['estado' => 1]);
 
+            return redirect("inicio");
         return response()->json($amigos);
 
 

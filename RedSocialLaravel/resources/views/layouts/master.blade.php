@@ -37,7 +37,7 @@
             </div>
             <div id="asideRG" class="col-lg-2 col-sm-12 my-5">
                 @if (Auth::check())
-                    <div class="row my-5 border border border-primary p-3" id="friends" name="friends">
+                    <div class="row my-5  p-3" id="friends" name="friends">
                        @section ('adiskideak')
                         
                        @show 

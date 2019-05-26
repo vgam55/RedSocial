@@ -37,8 +37,12 @@ class HomeController extends Controller
     {
         $publicaciones = Publicacion::select('users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
             ->join('users', 'publicaciones.id_usuario', '=', 'users.id_Usuario')
-            ->get();
-
+            ->join('amigos', 'publicaciones.id_usuario', '=', 'amigos.id_usuario_remitente')
+            ->where([
+                ['publicaciones.id_usuario','=','amigos.id_usuario_remitente'],
+                ['amigos.id_usuario_destinatario','=', Auth::user()->id_Usuario],
+                ['estado','=',1]
+            ])->get();
 
         return view('inicio',['publicaciones'=>$publicaciones]);
     }
