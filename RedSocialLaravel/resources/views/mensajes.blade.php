@@ -98,8 +98,7 @@
                   <input type="hidden" name="destinatario" value="{{ $mensaje->id_Remitente }}">
                 </div>
                 <div class="form-group">
-        <hr>
-
+                <hr>
                   <label for="message" class="col-form-label text-left">Mensaje:</label>
                   <textarea class="form-control" name="mensaje"></textarea>
                 </div>
