@@ -10,6 +10,7 @@ $(function(){
            	alert('El error es '+error);
            }
          }); 
+});
 
 
 /*function mostrarAmigos()
@@ -57,9 +58,3 @@ $.ajax({
 	 });
 /* return false;*/
 
-<<<<<<< HEAD
-/*>>>>>>> 23a47e02b650e44d8123c46445eb062a8c291dc2
-});*/
-=======
-});
->>>>>>> 8c2bff5b7c26b84e9fc938300fdcf087205757f1

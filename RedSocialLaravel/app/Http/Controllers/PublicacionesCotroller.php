@@ -30,7 +30,7 @@ class PublicacionesController extends Controller
         $publicacion->id_usuario= Auth::user()->id_Usuario;
         $publicacion->fecha=$date->format('Y-m-d');
         $publicacion->contenido=$request->input('contenido');
-    	$publicacion->id_foto=1;
+       	$publicacion->id_foto=1;
         $publicacion->id_album=1;
 
 
