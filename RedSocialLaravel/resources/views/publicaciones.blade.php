@@ -8,10 +8,10 @@
 
     <div class="mt-5">
         <label class="font-weight-bold" for="nombre">Publicacion:</label><br>
-        <textarea name="contenido" id="contenido" cols="90" rows="10"></textarea>
+        <textarea name="contenido" id="contenido" cols="80" rows="10"></textarea>
     </div>
         <div>
-         <button type="submit" class="btn btn-success float-right">Publicar</button>
+         <button type="submit" class="btn btn-success ">Publicar</button>
         </div>
 
     </form>

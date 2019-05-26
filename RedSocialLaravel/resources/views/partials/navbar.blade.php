@@ -20,15 +20,12 @@
                 Alertas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url('/notificaciones') }}">Solcitud de Amistad</a>
-                <a class="dropdown-item" href="#">Eventos</a>
+                <a class="dropdown-item" href="{{ url('/peticiones') }}">Solcitud de Amistad</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Chats</a>
+                <a class="dropdown-item" href="{{ url('mensajes') }}">Mensajes</a>                
                 </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url('mensajes') }}">Mensajes <span class="sr-only">(current)</span></a>
-            </li>
+         
             <li class="nav-item">
                 <a class="nav-link" href="#">Amigos</a>
             </li>

@@ -20,6 +20,6 @@
             
         @endforeach
     @else
-        No tiens peticiones de amistad
+        No tienes peticiones de amistad
     @endif
 @endsection
