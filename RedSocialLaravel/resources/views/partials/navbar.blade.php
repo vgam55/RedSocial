@@ -20,7 +20,7 @@
                 Alertas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url('/peticiones') }}">Solcitud de Amistad</a>
+                <a class="dropdown-item" href="{{ url('/peticiones') }}">Solicitud de Amistad</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ url('mensajes') }}">Mensajes</a>                
                 </div>
