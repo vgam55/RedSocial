@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@include('flash::message')
 
 <a href="{{url('publicaciones')}}" class="btn btn-primary m-3">Nueva Publicacion</a>
 

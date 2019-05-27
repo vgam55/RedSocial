@@ -59,6 +59,7 @@ class UserController extends Controller
            Storage::disk('public')->putFileAs('foto', new File($request->file('image')),$name,'public');*/
 
         $usuario->save();
+        flash('Guardado con exito')->success();
        return redirect()->route('inicio');
     }
 

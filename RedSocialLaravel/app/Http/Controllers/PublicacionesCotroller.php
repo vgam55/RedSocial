@@ -43,7 +43,8 @@ class PublicacionesController extends Controller
         $publicacion->id_album=1;
 
 
-    	$publicacion->save();
+        $publicacion->save();
+        flash('Publicacion subida con exito')->success();
         return redirect('inicio');
 
     }
@@ -53,6 +54,7 @@ class PublicacionesController extends Controller
      {
 
           Publicacion::find($idPublicacion)->delete();
+          flash('Publicacion borrada con exito')->error();
           return redirect('inicio');
      }
 }

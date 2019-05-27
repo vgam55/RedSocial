@@ -41,7 +41,7 @@ class AmigosController extends Controller
        ->where('id_usuario_remitente','=', $idAmigo)
        ->where('estado','=',1);
        $amigo->delete();
-
+       flash('Amigo borrado con exito')->error();
        return redirect()->action('HomeController@inicio');
     }
 
@@ -53,7 +53,7 @@ class AmigosController extends Controller
         $amigo->fecha=date('Y-m-d');
         $amigo->estado=0;
         $amigo->save();
-
+        flash('Solicitud enviada con exito')->success();
         return redirect()->action('HomeController@inicio');
     }
 
@@ -73,7 +73,7 @@ class AmigosController extends Controller
         $amigo->fecha=date('Y-m-d');
         $amigo->estado=1;
         $amigo->save();
-
+        flash('Solicitud aceptada con exito')->success();
             return redirect("inicio");
         return response()->json($amigos);
 

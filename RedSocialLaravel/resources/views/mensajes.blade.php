@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('content')
+@include('flash::message')
+
+
 <div class = "col-12 mb-5">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nuevo</button>
 </div>
