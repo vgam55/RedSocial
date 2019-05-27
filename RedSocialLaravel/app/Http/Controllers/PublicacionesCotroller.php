@@ -28,7 +28,9 @@ class PublicacionesController extends Controller
             ->where('publicaciones.id_usuario','=', $iduser)
             ->get();
 
-        return view('inicio',['publicaciones'=>$publicaciones]);
+        $listaAmigos[] = $iduser;
+        
+        return view('inicio',['listaAmigos'=>$listaAmigos, 'publicaciones'=>$publicaciones]);
     }
 
     public function create(Request $request)

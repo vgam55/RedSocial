@@ -27,15 +27,15 @@
 
       <div class="container">
       <div class="row justify-content-between">
-            <div class="col-lg-2 col-sm-12 my-5 align-content-around">
+            <div class="col-lg-2 col-sm-12 my-5 align-content-around ">
         @if (Auth::check())
                 @include('partials.asideLF')
         @endif
             </div>
-            <div class="col-lg-8 col-sm-12 text-center my-5">
+            <div class="col-lg-8 col-sm-12 text-center my-5 mx-auto">
                 @yield('content')
             </div>
-            <div id="asideRG" class="col-lg-2 col-sm-12 my-5">
+            <div id="asideRG" class="col-lg-2 col-sm-12 my-5 mx-auto">
                 @if (Auth::check())
                     <div class="row my-5  p-3" id="friends" name="friends">
                        @section ('adiskideak')
@@ -44,8 +44,7 @@
                     </div>
                     <script src="js/amigos.js"></script>
                 @endif
-
-            <div class="col-lg-2 col-sm-12 my-5">
+            <div class="col-lg-2 col-sm-12 my-5 mx-auto">
         @if (Auth::check())
                 @include('partials.asideRG')
         @endif

@@ -26,6 +26,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/peticiones', 'PeticionesController@index')->name('peticiones');
 
 	//Rutas para la gestion de "Amigos"
+	Route::get('/listAmigos','AmigosController@listAmigos'); //Lleva al método que consigue todos los amigos del usuario que se ha registrado
 	Route::get('/getAmigos','AmigosController@getAmigos'); //Lleva al método que consigue todos los amigos del usuario que se ha registrado
 	Route::get('/findAmigos','UserController@getUserByName'); //Lleva al método que busca usuarios por nombre para, por ejemplo, mandar una solicitud de amistad.
 	Route::get('/getAmistad/{idUsuario}','AmigosController@getAmistad');//Lleva al método que envia una solicitud de amistad.

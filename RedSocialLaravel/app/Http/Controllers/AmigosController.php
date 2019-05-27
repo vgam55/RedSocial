@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Amigo;
+use App\Publicacion;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -25,6 +26,19 @@ class AmigosController extends Controller
         {
             return $vista;
         }
+    }
+
+    public function listAmigos()
+    {
+        $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
+        ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
+        ->where('estado','=',1)->get();
+
+        $publicaciones = Publicacion::select('users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
+            ->join('users', 'publicaciones.id_usuario', '=', 'users.id_Usuario')
+            ->get();
+
+        return view('amigos',['listaAmigos'=>$amigos, 'publicaciones'=>$publicaciones]);
     }
 
     public function deleteAmigos($idAmigo)

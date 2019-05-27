@@ -27,7 +27,7 @@
             </li>
          
             <li class="nav-item">
-                <a class="nav-link" href="#">Amigos</a>
+                <a class="nav-link" href="{{ url('/listAmigos') }}">Amigos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('logout')}}">Salir</a>
