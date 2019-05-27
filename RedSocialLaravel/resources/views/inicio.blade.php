@@ -19,7 +19,7 @@
                 style="display:inline">
                 {{method_field('DELETE')}}
                 {{csrf_field()}}
-                    <button type="submit" class="btn btn-danger mb-2" style="padding:8px 10px;margin-top:25px;">
+                    <button type="submit"  class="btn btn-danger mb-2" style="padding:8px 10px;margin-top:25px;" onclick="return confirm('Estas seguro que quieres borrar la publicacion?')">
                     Borrar
                 </button>
             </form>

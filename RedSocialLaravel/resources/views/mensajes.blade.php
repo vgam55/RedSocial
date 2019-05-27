@@ -28,7 +28,7 @@
           <form action="{{action('MensajesController@delete',$mensaje->id_Mensaje)}}" method="POST" style="display:inline">
             {{method_field('DELETE')}}
             {{csrf_field()}}
-              <button type="submit" class="btn btn-danger">Borrar</button>
+              <button type="submit" class="btn btn-danger"  onclick="return confirm('Estas seguro que quieres borrar el mensaje?')">Borrar</button>
           </form>
         </td>
       </tr>

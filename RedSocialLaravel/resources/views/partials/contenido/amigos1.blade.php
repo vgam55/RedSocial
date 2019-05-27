@@ -10,7 +10,7 @@
 	    {{ csrf_field() }}
 	    {{ method_field('DELETE') }}
         <a href="{{url('/getPublicaciones/'.$amigo->id_usuario_destinatario)}}" class="btn btn-primary btn-sm stretched-link flex-fill">{{$amigo->name}}</a>
-	    <button class="btn btn-danger btn-sm stretched-link flex-fill" type="submit">Borrar</button>
+	    <button class="btn btn-danger btn-sm stretched-link flex-fill" type="submit"  onclick="return confirm('Estas seguro que quieres borrar tu amistad?')">Borrar</button>
 	  </form>
 	</div>
 	@endforeach
