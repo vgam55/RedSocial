@@ -1,8 +1,8 @@
 <div>
   {{--  <img src="{{ asset('img/perfil.jpg') }}" title="" style="height: 50px" class="rounded-circle"> --}}
 	<div class="card " style="max-width: 250px; min-width:100px;position:absolute;left:-3em;">
-	
-		  <div class="row no-gutters border-dark  text-black">
+
+		  <div class="row no-gutters border-dark text-black">
 		    <div class="col-md-4">
 		      <img src="{{asset('img/'.Auth::user()->avatar)}}" class="card-img" alt="{{Auth::user()->avatar}}">
 		    </div>
@@ -20,4 +20,4 @@
 		  </form>
 
    </div>
-</div>
+</div><br>
