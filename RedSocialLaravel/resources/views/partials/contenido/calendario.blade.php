@@ -244,7 +244,7 @@ html, body, div, span, applet, object, iframe,
     }
 
     .contenidoCalendar{
-        margin-left: -4em;
+        margin-left: -5em;
     }
 
     </style>

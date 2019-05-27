@@ -19,9 +19,10 @@ class UserController extends Controller
     public function getUserByName(Request $request)
     {
         $nombre=$request->input('buscar');
-        $usuarios=User::where('name','like','%'.$nombre.'%')->whereNotIn('id_Usuario', [Auth::user()->id_Usuario])->get();
-        
-        
+        $usuarios=User::where('name','like','%'.$nombre.'%')
+        ->whereNotIn('id_Usuario', [Auth::user()->id_Usuario])->get();
+
+
         return view('listaUsuarios',['listaUsuarios'=>$usuarios]);
     }
 
@@ -39,7 +40,7 @@ class UserController extends Controller
         Auth::user()->password=$usuario->password;
         Auth::user()->fecha_Nac=$usuario->fecha_Nac;
       //  if ($request->file('avatar')->isValid()) {
-            
+
             if($request->file('avatar')!=null)
             {
                 $archivo=$request->file('avatar');
@@ -51,12 +52,12 @@ class UserController extends Controller
             {
                 $usuario->avatar=$request->input('avatarO');
             }
-           
+
         //}
        /*    $usuario->avatar = $request->file('image')->getClientOriginalName();
-           $name = $request->file('image')->getClientOriginalName();       
+           $name = $request->file('image')->getClientOriginalName();
            Storage::disk('public')->putFileAs('foto', new File($request->file('image')),$name,'public');*/
-        
+
         $usuario->save();
        return redirect()->route('inicio');
     }
