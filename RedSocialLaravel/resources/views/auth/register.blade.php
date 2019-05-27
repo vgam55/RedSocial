@@ -17,7 +17,6 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                                 <input id="avatar" type="hidden" class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar" value="avatarH.jpg" required autofocus>
-name
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
