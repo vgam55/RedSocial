@@ -20,7 +20,7 @@ class userSeeder extends Seeder
           $user->email="vgam@latinmail.com";
           $user->password=bcrypt("12345");
           $user->fecha_Nac="1970-03-04";
-          $user->avatar="avatarH.jpg";
+          $user->avatar="avatarVictor.png";
           $user->save();
 
           $user= new User();
@@ -29,7 +29,7 @@ class userSeeder extends Seeder
           $user->email="anne@mail.com";
           $user->password=bcrypt("12345");
           $user->fecha_Nac="1970-03-04";
-          $user->avatar="avatarM.png";
+          $user->avatar="avatarAnne.png";
           $user->save();
 
           $user= new User();
@@ -38,7 +38,7 @@ class userSeeder extends Seeder
           $user->email="ibermatica@latinmail.com";
           $user->password=bcrypt("12345");
           $user->fecha_Nac="1970-03-04";
-          $user->avatar="avatarH.jpg";
+          $user->avatar="avatarJose.jpg";
           $user->save();
 
           $user= new User();
@@ -47,7 +47,7 @@ class userSeeder extends Seeder
           $user->email="samuel@latinmail.com";
           $user->password=bcrypt("12345");
           $user->fecha_Nac="1970-03-04";
-          $user->avatar="avatarH.jpg";
+          $user->avatar="avatarSamuel.jpg";
           $user->save();
     }
 }
