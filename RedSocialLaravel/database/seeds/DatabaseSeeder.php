@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
          Model::unguard();
         $this->call(userSeeder::class);
         $this->call(albumesSeeder::class);
-        $this->call(amigosSeeder::class);
+       // $this->call(amigosSeeder::class);
         $this->call(chatsSeeder::class);
         $this->call(fotosSeeder::class);
         $this->call(publicacionesSeeder::class);

@@ -3,7 +3,7 @@ error_reporting(0);
 $usuariolog=Auth::user()->id_Usuario;
 $host_db = "localhost";
 $user_db = "root";
-$pass_db = "retogrupo2";
+$pass_db = "";
 $db_name = "redsocial";
 
 $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
