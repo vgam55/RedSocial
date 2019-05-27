@@ -38,7 +38,7 @@ class userSeeder extends Seeder
           $user->email="ibermatica@latinmail.com";
           $user->password=bcrypt("12345");
           $user->fecha_Nac="1970-03-04";
-          $user->avatar="avatarJose.jpg";
+          $user->avatar="avatarJose.png";
           $user->save();
 
           $user= new User();
