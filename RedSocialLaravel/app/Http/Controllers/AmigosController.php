@@ -12,16 +12,16 @@ class AmigosController extends Controller
 {
     public function getAmigos(Request $request)
     {
-        
+
          $amigos=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_destinatario')
                 ->where('id_usuario_remitente','=',Auth::user()->id_Usuario)
                 ->where('estado','=',1)->get();
          $vista=View::make('\partials\contenido\amigos1')->with('listaAmigos',$amigos);
         if($request->ajax()){
             $sections = $vista->renderSections();
-            return Response::json($sections['adiskideak']); 
+            return Response::json($sections['adiskideak']);
         }
-        else 
+        else
         {
             return $vista;
         }
@@ -57,11 +57,18 @@ class AmigosController extends Controller
             ->where('id_usuario_remitente', $idUsuario)
             ->update(['estado' => 1]);
 
+        $amigo=new Amigo;
+        $amigo->id_usuario_remitente=Auth::user()->id_Usuario;
+        $amigo->id_usuario_destinatario=$idUsuario;
+        $amigo->fecha=date('Y-m-d');
+        $amigo->estado=1;
+        $amigo->save();
+
             return redirect("inicio");
         return response()->json($amigos);
 
 
-       
+
     }
 
 }
