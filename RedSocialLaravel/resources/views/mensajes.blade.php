@@ -17,10 +17,10 @@
     <tbody>
     @foreach ($mensajes as $mensaje)
       <tr class="table-primary">
-        <td class="align-middle col-1">{{ $mensaje->name }}</td>
-        <td class="align-middle col-6">{{ $mensaje->mensaje }}</td>
-        <td class="align-middle col-1">{{ $mensaje->fecha }}</td>
-        <td class="align-middle col-4">
+        <td class="align-middle">{{ $mensaje->name }}</td>
+        <td class="align-middle">{{ $mensaje->mensaje }}</td>
+        <td class="align-middle">{{ $mensaje->fecha }}</td>
+        <td class="align-middle">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal{{ $mensaje->id_Mensaje }}">Mostrar</button>
           <form action="{{action('MensajesController@delete',$mensaje->id_Mensaje)}}" method="POST" style="display:inline">
             {{method_field('DELETE')}}

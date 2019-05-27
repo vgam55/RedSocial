@@ -21,6 +21,15 @@ class PublicacionesController extends Controller
         return view('publicaciones');
     }
 
+    public function getPublicaciones($iduser)
+    {
+        $publicaciones = Publicacion::select('users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
+            ->join('users', 'publicaciones.id_usuario', '=', 'users.id_Usuario')
+            ->where('publicaciones.id_usuario','=', $iduser)
+            ->get();
+
+        return view('inicio',['publicaciones'=>$publicaciones]);
+    }
 
     public function create(Request $request)
     {

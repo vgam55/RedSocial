@@ -41,6 +41,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 	//Rutas para gestionar publicaciones
 	Route::get('/publicaciones','PublicacionesController@index');
+	Route::get('/getPublicaciones/{idUser}','PublicacionesController@getPublicaciones');
 	Route::get('/publicaciones/read','PublicacionesController@read');
     Route::post('/create','PublicacionesController@create');
     Route::delete('/delete/{idPublicacion}','PublicacionesController@delete');
