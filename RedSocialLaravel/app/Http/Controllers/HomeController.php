@@ -29,7 +29,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {       
+    {
        return redirect()->action('HomeController@inicio');
     }
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
         $publicaciones = Publicacion::select('users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
             ->join('users', 'publicaciones.id_usuario', '=', 'users.id_Usuario')
             ->get();
-            
+
         return view('inicio',['publicaciones'=>$publicaciones]);
     }
 }

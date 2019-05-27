@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/userStyle.css') }}" type="text/css">
+    {{-- <link rel="stylesheet" href="{{ asset('css/userStyle.css') }}" type="text/css"> --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
-    
+
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <!-- <script src="{{ asset('css/bootstrap/js/jquery-3.3.1.js') }}"></script>-->
-  
+
     <script src="{{ asset('css/bootstrap/js/bootstrap.min.js') }}"></script>
 
     <link href="{{ asset('img/melonaIco.ico') }}" rel='shortcut icon' type='image/x-icon'>
@@ -39,8 +39,8 @@
                 @if (Auth::check())
                     <div class="row my-5  p-3" id="friends" name="friends">
                        @section ('adiskideak')
-                        
-                       @show 
+
+                       @show
                     </div>
                     <script src="js/amigos.js"></script>
                 @endif
@@ -55,8 +55,8 @@
       </div>
     </main>
 
-  
-    
+
+
 
 </body>
 </html>

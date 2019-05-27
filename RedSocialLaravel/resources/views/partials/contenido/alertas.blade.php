@@ -34,7 +34,7 @@ if($conexion){
 	<div ><!--MENSAJES-->
 
 		<button class="btn" type="button" data-toggle="collapse" data-target="#mensajes-content" aria-expanded="false" aria-controls="mensajes-content">
-			<a href="http://localhost/RedSocial/RedSocialLaravel/public/mensajes" style="text-decoration:none; color:#000;"><p style="font-size:14px;">Mensajes &nbsp;<span class="badge badge-primary"><?php echo $num_mensajes ?></span></p></a>
+			<a href={{ url('mensajes')}} style="text-decoration:none; color:#000;"><p style="font-size:14px;">Mensajes &nbsp;<span class="badge badge-primary"><?php echo $num_mensajes ?></span></p></a>
 		</button>
 
 	</div>
@@ -42,7 +42,7 @@ if($conexion){
 	<div style="margin-top:20px;"><!--PETICIONES-->
 
 		<button class="btn" type="button" data-toggle="collapse" data-target="#peticiones-content" aria-expanded="false" aria-controls="peticiones-content">
-			<a href="http://localhost/RedSocial/RedSocialLaravel/public/peticiones" style="text-decoration:none; color:#000;"><p style="font-size:14px;">Peticiones &nbsp;<span class="badge badge-primary"><?php echo $num_peticiones ?></span></p></a>
+			<a href={{ url('peticiones')}} style="text-decoration:none; color:#000;"><p style="font-size:14px;">Peticiones &nbsp;<span class="badge badge-primary"><?php echo $num_peticiones ?></span></p></a>
 		</button>
 
 	</div>
