@@ -18,6 +18,7 @@ class PeticionesController extends Controller
         $peticiones=DB::table('amigos')->join('users','users.id_Usuario','=','amigos.id_usuario_remitente')
                 ->where('id_usuario_destinatario','=',Auth::user()->id_Usuario)
                 ->where('estado','=',0)->get();
+                
         return view('peticiones',['peticiones'=>$peticiones]);
     }
 }
