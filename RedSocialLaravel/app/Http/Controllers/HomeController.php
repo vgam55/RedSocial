@@ -47,7 +47,7 @@ class HomeController extends Controller
         }
         $listaAmigos[] = Auth::user()->id_Usuario;
 
-        $publicaciones = Publicacion::select('users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
+        $publicaciones = Publicacion::select('users.avatar','users.name', 'publicaciones.id_Publicaciones', 'publicaciones.id_usuario', 'publicaciones.fecha', 'publicaciones.contenido', 'publicaciones.id_foto', 'publicaciones.id_album')
             ->join('users', 'publicaciones.id_usuario', '=', 'users.id_Usuario')
             ->get();
 
