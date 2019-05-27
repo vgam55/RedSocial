@@ -25,13 +25,23 @@ class AmigosController extends Controller
         {
             return $vista;
         }
-
     }
 
     public function deleteAmigos($idAmigo)
     {
-       $amigo=Amigo::findOrFail($idAmigo);
+       //$amigo=Amigo::findOrFail($idAmigo);
+       $amigo=Amigo::select('id_Usuario_Amigo')
+       ->where('id_usuario_remitente','=', Auth::user()->id_Usuario)
+       ->where('id_usuario_destinatario','=', $idAmigo)
+       ->where('estado','=',1);
        $amigo->delete();
+
+       $amigo=Amigo::select('id_Usuario_Amigo')
+       ->where('id_usuario_destinatario','=', Auth::user()->id_Usuario)
+       ->where('id_usuario_remitente','=', $idAmigo)
+       ->where('estado','=',1);
+       $amigo->delete();
+
        return redirect()->action('HomeController@inicio');
     }
 
