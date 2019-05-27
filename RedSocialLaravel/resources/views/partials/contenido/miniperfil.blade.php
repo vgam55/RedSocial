@@ -16,7 +16,7 @@
 		  	  {{ csrf_field() }}
 		  	  {{ method_field('delete') }}
 		  	  <a href=" {{ url('/usuario') }} " class="btn btn-primary col-sm-4">Editar</a>
-		  	  <button type="submit" class="btn btn-danger col-sm-4">Borrar</button>
+		  	  <button type="submit" class="btn btn-danger col-sm-4"  onclick="return confirm('Estas seguro que quieres borrar tu usuario?')">Borrar</button>
 		  </form>
 
    </div>
