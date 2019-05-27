@@ -51,7 +51,9 @@ class MensajesController extends Controller
     	$mensajes->mensaje=$request->input('mensaje');
         $mensajes->fecha=$fecha->format('Y-m-d');
 
-    	$mensajes->save();
+        $mensajes->save();
+        flash('Mensaje enviado con exito')->success();
+      
         return redirect('mensajes');
     }
 
@@ -61,6 +63,7 @@ class MensajesController extends Controller
     public function delete($id_Mensaje)
     {
         Mensaje::find($id_Mensaje)->delete();
+        flash('Mensaje borrado con exito')->error();
          return redirect('mensajes');
     }
 }

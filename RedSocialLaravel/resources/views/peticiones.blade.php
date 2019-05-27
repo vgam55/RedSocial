@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('content')
+
+
     @if ($peticiones->count() > 0)
     <h2>Peticiones de amistad:</h2><br>
         @foreach ($peticiones as $peticion)
